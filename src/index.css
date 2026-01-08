@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* React PageFlip Styles */
+.stf__block {
+  position: relative;
+}
+
+.stf__item {
+  position: relative;
+  display: block;
+  perspective: 2000px;
+}
+
+.stf__block--hard {
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.stf__block--hard.stf__block--shadow {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Flipbook container */
+.flipbook-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile touch support */
+@media (max-width: 768px) {
+  .stf__item {
+    touch-action: pan-y;
+  }
+  
+  .flipbook-container {
+    padding: 10px;
+  }
+}
