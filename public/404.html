@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burger O'clock - 美式靈魂、日式細節</title>
+    <script>
+      // GitHub Pages 404 重定向處理
+      // 自動重定向到 index.html 以支援 SPA 路由
+      (function() {
+        var pathSegmentsToKeep = 1;
+        var l = window.location;
+        var basePath = '/burger-oclock';
+        
+        // 獲取當前路徑
+        var currentPath = l.pathname;
+        
+        // 構建重定向 URL
+        var redirectPath = basePath + '/index.html';
+        
+        // 如果有查詢參數或 hash，保留它們
+        if (l.search) {
+          redirectPath += l.search;
+        }
+        if (l.hash) {
+          redirectPath += l.hash;
+        }
+        
+        // 執行重定向
+        window.location.replace(redirectPath);
+      })();
+    </script>
+  </head>
+  <body>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif; color: #333;">
+      <h1>正在載入...</h1>
+      <p>如果頁面沒有自動跳轉，請 <a href="/burger-oclock/" style="color: #FFD700;">點擊這裡</a></p>
+    </div>
+  </body>
+</html>
